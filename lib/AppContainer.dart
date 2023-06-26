@@ -7,7 +7,7 @@ class AppContainer extends StatefulWidget {
   AppContainer({super.key});
 
   @override
-  State<StatefulWidget> createState() {
+  State<AppContainer> createState() {
     return _AppContainerState();
   }
 }
@@ -24,11 +24,12 @@ class _AppContainerState extends State<AppContainer>{
     "assets/dice-6.png"
   ];
 
+
+  final Random random = Random();
   void RollDice() {
-    var random = Random();
+
     setState(() {
       String imageFound=Images[random.nextInt(6)];
-      print("image  :"+imageFound);
       imageToDisplay=imageFound;
     });
 
